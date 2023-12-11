@@ -5,28 +5,29 @@ import misClases.teoria.CComputador;
 class CApComputador {
 public static void main(String[] args) {
 		
-		CComputador computador = new CComputador();
+		CComputador computador1 = new CComputador();
+		CComputador computador2 = new CComputador();
 		
 		System.out.println("===================================================");
-		computador.EncenderOrdenador();
+		computador1.EncenderOrdenador();
 		System.out.println("===================================================");
-		computador.AsignarValores("Ast","Intel Pentium","TFT");
+		computador1.AsignarValores("Ast","Intel Pentium","TFT");
 		//para acceder a un método estático usamos el nombre de clase (no el de objeto)
 		CComputador.garantia();
-		computador.Estado();
+		computador1.Estado();
 		System.out.println("===================================================");
-		computador.ApagarOrdenador();
+		computador1.ApagarOrdenador();
 		System.out.println("===================================================");
-		computador.Estado();
+		computador1.Estado();
 		System.out.println("===================================================");
-		computador.EncenderOrdenador();
+		computador2.EncenderOrdenador();
 		System.out.println("===================================================");
-		computador.AsignarValores("HP","AMD","CRT");
-		computador.Estado();
+		computador2.AsignarValores("HP","AMD","CRT");
+		computador2.Estado();
 		System.out.println("===================================================");
-		computador.ApagarOrdenador();
+		computador2.ApagarOrdenador();
 		System.out.println("===================================================");
-		computador.Estado();
+		computador2.Estado();
 		
 		
 		
