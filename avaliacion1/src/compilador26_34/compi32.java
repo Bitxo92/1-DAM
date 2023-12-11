@@ -23,7 +23,7 @@ public class compi32 {
 			}
 			
 		}
-		teclado.close();
+		teclado.close();;
 		System.out.println("Triangulos con superficie superior a 12 son: " + a);
 	}
 
