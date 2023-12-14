@@ -9,12 +9,12 @@ public class CCadena {
 	private int i;
 	private char[] letras = new char[30];
 
-	public void recolleCadena() throws IOException {
+	public void recolleCadena() {
 		Scanner teclado = new Scanner(System.in);
-	    System.out.println("introduzca una cadena de caracteres: ");
-	    String frase = teclado.nextLine();
+		System.out.println("introduzca una cadena de caracteres: ");
+		String frase = teclado.nextLine();
 		for (i = 0; i < frase.length(); i++) {
-			letras[i]=frase.charAt(i);
+			letras[i] = frase.charAt(i);
 
 		}
 		teclado.close();
@@ -23,14 +23,16 @@ public class CCadena {
 	public void amosaCadena() {
 		System.out.println("los valores recogidos en la cadena letras son:");
 		for (i = 0; i < letras.length; i++) {
-			System.out.print(letras[i]);
+			if(letras[i]!='\0')
+				System.out.print(letras[i]);
 		}
 	}
 
 	public void amosaRevesCadena() {
 
 		for (i = (letras.length) - 1; i >= 0; i--) {
-			System.out.print(letras[i]);
+			if(letras[i]!='\0')
+				System.out.print(letras[i]);
 		}
 
 	}
@@ -50,7 +52,7 @@ public class CCadena {
 
 	public void invierteCadena() {
 		char temp;
-		for (i = 0; i < (letras.length)/2; i++) {
+		for (i = 0; i < (letras.length) / 2; i++) {
 			temp = letras[i];
 			letras[i] = letras[(letras.length - i) - 1];
 			letras[letras.length - i - 1] = temp;
@@ -58,65 +60,60 @@ public class CCadena {
 		}
 
 	}
-	
-	
-	 public void capicua() {
-		 
-	      
 
-	        // Crear un nuevo array con el doble de longitud
-	        char[] resultado = new char[letras.length * 2];
+	public void capicua() {
 
-	        // Copiar la cadena original en la primera mitad del nuevo array
-	        System.arraycopy(letras, 0, resultado, 0, letras.length);
-	        
-	        //invertimos cadena con nuestro método
-	        invierteCadena();
+		// Crear un nuevo array con el doble de longitud
+		char[] resultado = new char[letras.length * 2];
 
-	        // Copiar la cadena invertida en la segunda mitad del nuevo array
-	        System.arraycopy(letras, 0, resultado, letras.length, letras.length);
+		// Copiar la cadena original en la primera mitad del nuevo array
+		System.arraycopy(letras, 0, resultado, 0, letras.length);
 
-	        // Actualizar la cadena original con la versión sumada
-	        this.letras = resultado;
-	        
-	    }
-	 
-	 public void eliminaEnCadena(char a) {
-		 for(i=0;i<letras.length;i++) {
-			 if(letras[i]==a) {
-				 letras[i]=0;
-			 }
-		 }
-	 }
-	 
-	 public void repiteUnha() {
-		 // Crear un nuevo array con el doble de longitud
-	        char[] letrasRepetidas = new char[letras.length * 2];
+		// invertimos cadena con nuestro método
+		invierteCadena();
 
-	        // Iterar sobre cada valor del array original
-	        for (int i = 0; i < letras.length; i++) {
-	            // Obtener el valor actual
-	            char valor = letras[i];
+		// Copiar la cadena invertida en la segunda mitad del nuevo array
+		System.arraycopy(letras, 0, resultado, letras.length, letras.length);
 
-	            // Repetir el valor dos veces y agregarlo al nuevo array
-	            letrasRepetidas[2 * i] = valor;
-	            letrasRepetidas[2 * i + 1] = valor;
-	        }
+		// Actualizar la cadena original con la versión sumada
+		this.letras = resultado;
 
-	        // Actualizar el array original con la versión repetida
-	        this.letras = letrasRepetidas;
-	 }
-	 
-	 
-	 public void eliminaPares() {
-		 
-		 for(i=0;i<letras.length;i++) {
-			 if(i%2==0)
-				 letras[i]=0;
-			 
-			 
-		 }
-		 
-	 }
+	}
+
+	public void eliminaEnCadena(char a) {
+		for (i = 0; i < letras.length; i++) {
+			if (letras[i] == a) {
+				letras[i] = 0;
+			}
+		}
+	}
+
+	public void repiteUnha() {
+		// Crear un nuevo array con el doble de longitud
+		char[] letrasRepetidas = new char[letras.length * 2];
+
+		// Iterar sobre cada valor del array original
+		for (int i = 0; i < letras.length; i++) {
+			// Obtener el valor actual
+			char valor = letras[i];
+
+			// Repetir el valor dos veces y agregarlo al nuevo array
+			letrasRepetidas[2 * i] = valor;
+			letrasRepetidas[2 * i + 1] = valor;
+		}
+
+		// Actualizar el array original con la versión repetida
+		this.letras = letrasRepetidas;
+	}
+
+	public void eliminaPares() {
+
+		for (i = 0; i < letras.length; i++) {
+			if (i % 2 == 0)
+				letras[i] = 0;
+
+		}
+
+	}
 
 }

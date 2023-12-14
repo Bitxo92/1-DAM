@@ -10,7 +10,7 @@ public class piza203 {
 		cadena.recolleCadena();
 		System.out.println("\n");
 		cadena.amosaCadena();
-		System.out.println("\n");
+		System.out.println();
 		cadena.amosaRevesCadena();
 		
 	
