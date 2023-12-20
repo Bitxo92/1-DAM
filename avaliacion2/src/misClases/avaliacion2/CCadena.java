@@ -8,11 +8,12 @@ import java.util.Scanner;
 public class CCadena {
 	private int i;
 	private char[] letras = new char[30];
+	private String frase;
 
 	public void recolleCadena() {
 		Scanner teclado = new Scanner(System.in);
 		System.out.println("introduzca una cadena de caracteres: ");
-		String frase = teclado.nextLine();
+		frase = teclado.nextLine();
 		for (i = 0; i < frase.length(); i++) {
 			letras[i] = frase.charAt(i);
 
@@ -23,7 +24,7 @@ public class CCadena {
 	public void amosaCadena() {
 		System.out.println("los valores recogidos en la cadena letras son:");
 		for (i = 0; i < letras.length; i++) {
-			if(letras[i]!='\0')
+			if (letras[i] != '\0')
 				System.out.print(letras[i]);
 		}
 	}
@@ -31,7 +32,7 @@ public class CCadena {
 	public void amosaRevesCadena() {
 
 		for (i = (letras.length) - 1; i >= 0; i--) {
-			if(letras[i]!='\0')
+			if (letras[i] != '\0')
 				System.out.print(letras[i]);
 		}
 
@@ -80,11 +81,33 @@ public class CCadena {
 
 	}
 
+	public void capicua2() {
+        int j=frase.length();
+		for (i = frase.length() - 1; i >= 0; i--) {
+			letras[j]=letras[i];
+			j++;
+			
+
+		
+		}
+
+	}
+
 	public void eliminaEnCadena(char a) {
 		for (i = 0; i < letras.length; i++) {
 			if (letras[i] == a) {
-				letras[i] = 0;
-			}
+				letras[i] = '\0';
+				int s=i;
+				for(int j=s;j<letras.length-1;j++) {
+					
+					letras[j]=letras[s+1];
+					s++;
+					
+					
+					}
+				i--;
+			
+				}
 		}
 	}
 

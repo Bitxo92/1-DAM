@@ -10,7 +10,7 @@ public class piza205 {
 		cadena.amosaCadena();
 		
 		System.out.println("\n");
-		cadena.capicua();
+		cadena.capicua2();
 		cadena.amosaCadena();
 		
 	}
