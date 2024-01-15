@@ -52,14 +52,20 @@ public class CCadena {
 	}
 
 	public void invierteCadena() {
-		char temp;
-		for (i = 0; i < (letras.length) / 2; i++) {
-			temp = letras[i];
-			letras[i] = letras[(letras.length - i) - 1];
-			letras[letras.length - i - 1] = temp;
-
+		int i, j;
+		char letra;
+		i = 0;
+		while (letras[i] != '\0')
+			i++;
+		i--;
+		j = 0;
+		while (j < i) {
+			letra = letras[j];
+			letras[j] = letras[i];
+			letras[i] = letra;
+			j++;
+			i--;
 		}
-
 	}
 
 	public void capicua() {
@@ -82,13 +88,11 @@ public class CCadena {
 	}
 
 	public void capicua2() {
-        int j=frase.length();
+		int j = frase.length();
 		for (i = frase.length() - 1; i >= 0; i--) {
-			letras[j]=letras[i];
+			letras[j] = letras[i];
 			j++;
-			
 
-		
 		}
 
 	}
@@ -97,17 +101,16 @@ public class CCadena {
 		for (i = 0; i < letras.length; i++) {
 			if (letras[i] == a) {
 				letras[i] = '\0';
-				int s=i;
-				for(int j=s;j<letras.length-1;j++) {
-					
-					letras[j]=letras[s+1];
+				int s = i;
+				for (int j = s; j < letras.length - 1; j++) {
+
+					letras[j] = letras[s + 1];
 					s++;
-					
-					
-					}
-				i--;
-			
+
 				}
+				i--;
+
+			}
 		}
 	}
 
@@ -129,14 +132,43 @@ public class CCadena {
 		this.letras = letrasRepetidas;
 	}
 
+	public void repiteUna() {
+
+		for (int i = frase.length() - 1; i >= 0; i--) {
+			int j = i * 2 + 1;
+			letras[j] = letras[i];
+			letras[j - 1] = letras[i];
+
+		}
+	}
+
 	public void eliminaPares() {
+		int j = 0;
 
 		for (i = 0; i < letras.length; i++) {
-			if (i % 2 == 0)
-				letras[i] = 0;
+			if (i % 2 == 0) {
+				letras[i] = '\0';
+
+			}
 
 		}
 
 	}
 
+	public void eliminaPares2() {
+		int i, j;
+		i = 0;
+		j = 0;
+		while (letras[i] != '\0') {
+			if (i % 2 != 0) {
+				letras[j] = letras[i];
+				j++;
+			}
+			i++;
+		}
+		while (j < i) {
+			letras[j] = letras[i];
+			j++;
+		}
+	}
 }

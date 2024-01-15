@@ -10,8 +10,10 @@ public class piza208 {
 		cadena.recolleCadena();
 		cadena.amosaCadena();
 		System.out.println("\n");
-		cadena.eliminaPares();
+		cadena.eliminaPares2();
 		cadena.amosaCadena();
+		//cadena.eliminaPares();
+		//cadena.amosaCadena();
 	}
 
 }

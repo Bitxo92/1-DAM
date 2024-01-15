@@ -10,7 +10,7 @@ public class piza207 {
 		cadena.recolleCadena();
 		cadena.amosaCadena();
 		System.out.println("\n");
-		cadena.repiteUnha();
+		cadena.repiteUna();
 		cadena.amosaCadena();
 		
 	}

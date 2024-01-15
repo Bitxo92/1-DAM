@@ -6,7 +6,8 @@ public class piza213 {
 		CMatriz matriz = new CMatriz();
 		
 		matriz.inicializa();
-		matriz.oMaior();
+		int max=matriz.oMaior();
+		System.out.println("O maior da matriz: " + max);
 	}
 
 }

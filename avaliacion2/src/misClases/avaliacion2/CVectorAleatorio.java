@@ -17,12 +17,26 @@ public class CVectorAleatorio {
 
 	}
 
-	public void amosaVector() {
-		for (int i = 0; i < 10; i++) {
-			System.out.println("valor " + i + ": " + vector[i]);
+	 public void amosaVector() {
+	      System.out.println("   VECTOR de Enteiros");
+	      System.out.println("   ==================");
 
-		}
-	}
+	      int i;
+	      for(i = 0; i < this.vector.length; ++i) {
+	         System.out.print("      " + i);
+	      }
+
+	      System.out.println("");
+
+	      for(i = 0; i < this.vector.length; ++i) {
+	         if (this.vector[1] < 10) {
+	            System.out.print("      " + this.vector[i]);
+	         } else {
+	            System.out.print("     " + this.vector[i]);
+	         }
+	      }
+
+	   }
 
 	private void mostrarMenu() {
 		System.out.println("\n");

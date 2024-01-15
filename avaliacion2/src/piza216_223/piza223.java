@@ -4,7 +4,7 @@ public class piza223 {
 	public static void main(String[] args) {
 		CMatrizCuadrada matriz = new CMatrizCuadrada();
 		
-		matriz.amosaAbaixoEsquerda();
+		matriz.amosaAbaixoEsquerda2();
 	}
 
 }

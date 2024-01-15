@@ -2,7 +2,7 @@ package misClases.avaliacion2;
 
 public class CRecursivo {
 
-	private int i;
+	
 
 	private int[] vector = { 1, 3, 6, 2, 8, 7 };
 

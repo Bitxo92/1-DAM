@@ -2,7 +2,7 @@ package misClases.avaliacion2;
 
 public class CMatriz {
 
-	//array bidimensional de tipo int, con dimensión 2 X 3
+	// array bidimensional de tipo int, con dimensión 2 X 3
 	private int[][] matriz = new int[2][3];
 
 	// Método para inicializar el array con datos específicos
@@ -25,7 +25,7 @@ public class CMatriz {
 				System.out.print(matriz[i][j] + " " + " ");
 			}
 			// Nueva línea para separar filas
-			System.out.println(); 
+			System.out.println();
 		}
 	}
 
@@ -33,69 +33,72 @@ public class CMatriz {
 	public void amosaPorColumnas() {
 		for (int j = 0; j < matriz[0].length; j++) {
 			for (int i = 0; i < matriz.length; i++) {
-				System.out.print(matriz[i][j] + " "+" ");
+				System.out.print(matriz[i][j] + " " + " ");
 			}
 			// Nueva línea para separar columnas
-			System.out.println(); 
+			System.out.println();
 		}
 	}
-	
+
 	public void amosaPorFilasTotal() {
-		 for (int i = 0; i < matriz.length; i++) {
-			 //reinicializamos contador a 0 tras salir del bucle j
-	            int totalFila = 0;
-	            for (int j = 0; j < matriz[i].length; j++) {
-	                System.out.print(matriz[i][j] + " "+" ");
-	                totalFila += matriz[i][j];
-	            }
-	            System.out.println("(total: " + totalFila + ")");
-	        }
-		
+		for (int i = 0; i < matriz.length; i++) {
+			// reinicializamos contador a 0 tras salir del bucle j
+			int totalFila = 0;
+			for (int j = 0; j < matriz[i].length; j++) {
+				System.out.print(matriz[i][j] + " " + " ");
+				totalFila += matriz[i][j];
+			}
+			System.out.println("(total: " + totalFila + ")");
+		}
+
 	}
-	
-	
+
 	public void amosaPorColumnasTotal() {
-		
-		for(int j=0;j<matriz[0].length;j++) {
-			int totalColumna=0;
-			for(int i=0;i<matriz.length;i++) {
-				System.out.print(matriz[i][j] + " "+" ");
-				totalColumna+=matriz[i][j];
-	
+
+		for (int j = 0; j < matriz[0].length; j++) {
+			int totalColumna = 0;
+			for (int i = 0; i < matriz.length; i++) {
+				System.out.print(matriz[i][j] + " " + " ");
+				totalColumna += matriz[i][j];
+
 			}
 			System.out.println("(total: " + totalColumna + ")");
-			
+
 		}
 	}
-	
-	
-	
-	public void oMaior() {
-		int max=0;
-		for(int i=0;i<matriz.length;i++) {
-			for(int j=0;j<matriz[0].length;j++) {
-				if(matriz[i][j]>max) {
-					max=matriz[i][j];
+
+	public int oMaior() {
+		int max = 0;
+		for (int i = 0; i < matriz.length; i++) {
+			for (int j = 0; j < matriz[0].length; j++) {
+				if (matriz[i][j] > max) {
+					max = matriz[i][j];
 				}
-				
+
 			}
 		}
-		System.out.println("O maior da matriz: "+max);
+		return max;
+		
 	}
-	
-	
+
+
 	public void amosaFilaMaior(){
 		int filaMaior = 0;
+		int total =0;
+		
   
         int maiorValor = matriz[0][0];
 
         for (int i = 0; i < matriz.length; i++) {
+        	total=0;
             for (int j = 0; j < matriz[i].length; j++) {
-                if (matriz[i][j] > maiorValor) {
-                    maiorValor = matriz[i][j];
-                    filaMaior = i;
+            	total+=matriz[i][j];
                     
                 }
+            
+            if (maiorValor> total) {
+                maiorValor = total;
+                filaMaior = i;
             }
         }
 
@@ -103,33 +106,35 @@ public class CMatriz {
         System.out.println("==========");
 
         for (int j = 0; j < matriz[filaMaior].length; j++) {
-            System.out.print(matriz[filaMaior][j]);
+            System.out.printf("%3d",matriz[filaMaior][j]);
         }
 		
 	}
-	
+
 	public void amosaColumnaMaior() {
-	   
-	    int colMaior = 0;
-	    int maiorValor = matriz[0][0];
 
-	    for (int j = 0; j < matriz[0].length; j++) {
-	        for (int i = 0; i < matriz.length; i++) {
-	            if (matriz[i][j] > maiorValor) {
-	                maiorValor = matriz[i][j];
-	                
-	                colMaior = j;
-	            }
-	        }
-	    }
+		int colMaior = 0;
+		int maiorValor = matriz[0][0];
+		int total;
 
-	    System.out.println("Columna Maior");
-	    System.out.println("==============");
+		for (int j = 0; j < matriz[0].length; j++) {
+			total=0;
+			for (int i = 0; i < matriz.length; i++) {
+				total+=matriz[i][j];
+				if (total > maiorValor) {
+					maiorValor = total;
 
-	    for (int i = 0; i < matriz.length; i++) {
-	    	System.out.printf("%6d%n", matriz[i][colMaior]);
-	    }
+					colMaior = j;
+				}
+			}
+		}
+
+		System.out.println("Columna Maior");
+		System.out.println("==============");
+
+		for (int i = 0; i < matriz.length; i++) {
+			System.out.printf("%6d%n", matriz[i][colMaior]);
+		}
 	}
-
 
 }
