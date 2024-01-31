@@ -8,17 +8,17 @@ public class CEcuacion {
 
 	public void recogeDatos() {
 		System.out.print("Coeficiente a: ");
-		this.a = Leer.datoDouble();
+		a = Leer.datoDouble();
 		System.out.print("Coeficiente b: ");
-		this.b = Leer.datoDouble();
+		b = Leer.datoDouble();
 		System.out.print("Coeficiente c: ");
 		this.c = Leer.datoDouble();
 	}
 
 	public boolean raicesComplejas() {
 		boolean complejas = false;
-		this.d = this.b * this.b - 4.0D * this.a * this.c;
-		if (this.d < 0.0D) {
+		d = this.b * b - 4.0D * a * c;
+		if (d < 0.0D) {
 			complejas = true;
 		}
 
@@ -26,10 +26,10 @@ public class CEcuacion {
 	}
 
 	public void muestraResultado() {
-		System.out.println("Las ra�ces reales son:");
-		this.d = Math.sqrt(this.d);
-		double x1 = (-this.b + this.d) / (2.0D * this.a);
-		double x2 = (-this.b - this.d) / (2.0D * this.a);
+		System.out.println("Las raices reales son:");
+		this.d = Math.sqrt(d);
+		double x1 = (-b + d) / (2.0D * a);
+		double x2 = (-b - d) / (2.0D * a);
 		System.out.println("x1 = " + x1 + ", x2 = " + x2);
 	}
 }

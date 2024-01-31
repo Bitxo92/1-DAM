@@ -8,21 +8,21 @@ public class CIntereses {
 
 	public void recogeDatos() {
 		System.out.print("Capital invertido: ");
-		this.capital = Leer.datoDouble();
+		capital = Leer.datoDouble();
 		System.out.print("A un tipo(%) anual del: ");
-		this.tipo = Leer.datoFloat();
+		tipo = Leer.datoFloat();
 		System.out.print("Durante cuantos dias: ");
-		this.dias = Leer.datoInt();
-		this.realizaCalculos();
+		dias = Leer.datoInt();
+		realizaCalculos();
 	}
 
 	private void realizaCalculos() {
-		this.intereses = this.capital * (double) this.tipo * (double) this.dias / 36000.0D;
-		this.capital += this.intereses;
+		intereses = capital * (double) tipo * (double) dias / 36000.0D;
+		capital += intereses;
 	}
 
 	public void muestraInformacion() {
-		System.out.println("\nIntereses producidos... " + this.intereses);
-		System.out.println("Capital acumulado...... " + this.capital);
+		System.out.println("\nIntereses producidos... " + intereses);
+		System.out.println("Capital acumulado...... " + capital);
 	}
 }

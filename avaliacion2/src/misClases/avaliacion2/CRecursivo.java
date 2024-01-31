@@ -24,11 +24,11 @@ public class CRecursivo {
 
 	public void amosaA_B(int a, int b) {
 
-		if (a <= b) {
+		if (a <= b) 
 			amosaA_B(a, b - 1);
-			System.out.print(b + " ");
+		System.out.print(b + " ");
 
-		}
+		
 	}
 
 	public void amosaB_A(int a, int b) {
