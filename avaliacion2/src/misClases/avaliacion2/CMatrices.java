@@ -1,109 +1,133 @@
 package misClases.avaliacion2;
 
-import java.util.Scanner;
-@SuppressWarnings("all")
+import misClases.teoria.Leer;
+
 public class CMatrices {
-    public int[][] matrizA;
-    public int[][] matrizB;
-    public int[][] matrizC;
-    public int[][] matrizD;
+	private int[][] A = new int[3][3];
+	private int[][] B = new int[3][3];
+	private int[][] C = new int[3][3];
+	private int[][] D = new int[3][3];
+	private int n = 3;
 
-    public void recolle() {
-        Scanner scanner = new Scanner(System.in);
+	private int[][] dameReferencia(char letra) {
+		switch (letra) {
+		case 'A':
+			return A;
+		case 'B':
+			return B;
+		case 'C':
+			return C;
+		case 'D':
+			return D;
+		default:
+			throw new IllegalArgumentException("Argumento Invalido: " + letra);		
+		}}
 
-        System.out.println("Dame o número de filas para as matrices: ");
-        int filas = scanner.nextInt();
-        System.out.println("Dame o número de columnas para as matrices: ");
-        int columnas = scanner.nextInt();
-        matrizA = new int[filas][columnas];
-        matrizB = new int[filas][columnas];
-        matrizC = new int[filas][columnas];
-        matrizD = new int[filas][columnas];
+	public void recolle() {
+		System.out.print("Introduce dimension(2 o 3):     ");
+		this.n = Leer.datoInt();
 
-        // Recoller datos matriz A
-        System.out.println("Introduce os datos para a Matriz A:");
-       
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < columnas; j++) {
-                System.out.print("Introduce o elemento na posición [" + (i + 1) + "][" + (j + 1) + "]: ");
-                matrizA[i][j] = scanner.nextInt();
-            }
-        }
+		int i;
+		int j;
+		for (i = 0; i < n; ++i) {
+			for (j = 0; j < n; ++j) {
+				System.out.print("A[" + i + "][" + j + "]:");
+				this.A[i][j] = Leer.datoInt();
+			}
+		}
 
-        // Recoller datos matriz B
-        System.out.println("Introduce os datos para a Matriz B:");
-       
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < columnas; j++) {
-                System.out.print("Introduce o elemento na posición [" + (i + 1) + "][" + (j + 1) + "]: ");
-                matrizB[i][j] = scanner.nextInt();
-            }
-        }
-    }
+		for (i = 0; i < n; ++i) {
+			for (j = 0; j < n; ++j) {
+				System.out.print("B[" + i + "][" + j + "]:");
+				this.B[i][j] = Leer.datoInt();
+			}
+		}
 
-    public void amosa(int[][] matriz1, int[][] matriz2) {
+	}
 
-            // Mostrar ambas matrices en la misma línea
-            for (int i = 0; i < 2; i++) {
-                for (int j = 0; j < 2; j++) {
-                	System.out.print(" ");
-                    System.out.printf("%-3d", matriz1[i][j]);
-                }
-                System.out.print("          "); // Separación de 10 espacios
-                for (int j = 0; j < 2; j++) {
-                	System.out.print(" ");
-                    System.out.printf("%-3d", matriz2[i][j]);
-                }
-                System.out.println();
-            }
-        
-    }
+	public void amosa(char una, char dos) {
+		int[][] M1 = dameReferencia(una);
+		int[][] M2 = dameReferencia(dos);
+		System.out.println();
 
-    public void trasposta(int[][] matriz1, int[][] matriz2) {
-        for (int i = 0; i < matriz1.length; i++) {
-            for (int j = 0; j < matriz1[0].length; j++) {
-                matriz2[j][i] = matriz1[i][j];
-            }
-        }
-    }
+		for (int i = 0; i < this.n; ++i) {
+			int j;
+			for (j = 0; j < this.n; ++j) {
+				if (M1[i][j] >= 0 && M1[i][j] <= 9) {
+					System.out.print("     " + M1[i][j]);
+				} else {
+					System.out.print("    " + M1[i][j]);
+				}
+			}
 
-    public void suma(int[][] matriz1, int[][] matriz2, int[][] matriz3) {
-        for (int i = 0; i < matriz1.length; i++) {
-            for (int j = 0; j < matriz1[0].length; j++) {
-                matriz3[i][j] = matriz1[i][j] + matriz2[i][j];
-            }
-        }
-    }
+			System.out.print("     ");
 
-    public void resta(int[][] matriz1, int[][] matriz2, int[][] matriz3) {
-        for (int i = 0; i < matriz1.length; i++) {
-            for (int j = 0; j < matriz1[0].length; j++) {
-                matriz3[i][j] = matriz1[i][j] - matriz2[i][j];
-            }
-        }
-    }
+			for (j = 0; j < n; ++j) {
+				if (M2[i][j] >= 0 && M2[i][j] <= 9) {
+					System.out.print("     " + M2[i][j]);
+				} else {
+					System.out.print("    " + M2[i][j]);
+				}
+			}
 
-    public void multiplica(int[][] matriz1, int[][] matriz2, int[][] matriz3) {
-        // Para multiplicar débese cumprir a condición (o nº de filas = o nº de columnas)
-        for (int i = 0; i < matriz1.length; i++) {
-            for (int j = 0; j < matriz2[0].length; j++) {
-                matriz3[i][j] = 0; // Inicializar a 0 antes de acumular
-                for (int k = 0; k < matriz1[0].length; k++) {
-                    matriz3[i][j] += matriz1[i][k] * matriz2[k][j];
-                }
-            }
-        }
-    }
+			System.out.println();
+		}
 
+		System.out.println();
+	}
 
-    private void mostrarMatriz(int[][] matriz) {
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[0].length; j++) {
-                System.out.print(matriz[i][j] + " "+" "+" ");
-            }
-            System.out.println();
-        }
-    }
+	public void trasposta(char una, char dos) {
+		int[][] M1 = dameReferencia(una);
+		int[][] M2 = dameReferencia(dos);
+
+		for (int i = 0; i < n; ++i) {
+			for (int j = 0; j < n; ++j) {
+				M2[i][j] = M1[j][i];
+			}
+		}
+
+	}
+
+	public void suma(char una, char dos, char tres) {
+		int[][] M1 = dameReferencia(una);
+		int[][] M2 = dameReferencia(dos);
+		int[][] M3 = dameReferencia(tres);
+
+		for (int i = 0; i < n; ++i) {
+			for (int j = 0; j < n; ++j) {
+				M3[i][j] = M1[i][j] + M2[i][j];
+			}
+		}
+
+	}
+
+	public void resta(char una, char dos, char tres) {
+		int[][] M1 = dameReferencia(una);
+		int[][] M2 = dameReferencia(dos);
+		int[][] M3 = dameReferencia(tres);
+
+		for (int i = 0; i < n; ++i) {
+			for (int j = 0; j < n; ++j) {
+				M3[i][j] = M1[i][j] - M2[i][j];
+			}
+		}
+
+	}
+
+	public void multiplica(char una, char dos, char tres) {
+		int[][] M1 = dameReferencia(una);
+		int[][] M2 = dameReferencia(dos);
+		int[][] M3 = dameReferencia(tres);
+
+		for (int i = 0; i < n; ++i) {
+			for (int j = 0; j < n; ++j) {
+				M3[i][j] = 0;
+
+				for (int k = 0; k < n; ++k) {
+					M3[i][j] += M1[i][k] * M2[k][j];
+				}
+			}
+		}
+
+	}
 }
-
-

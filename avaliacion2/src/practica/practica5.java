@@ -1,10 +1,11 @@
 package practica;
 import misClases.avaliacion2.*;
+import misClases.teoria.Leer;
 import java.util.Scanner;
 @SuppressWarnings("all")
 public class practica5 {
 	
-	static void menu() {
+	private static void menu() {
 		System.out.println("\n");
 		System.out.println("1.- Matrices");
 		System.out.println("2.- Array de caracteres");
@@ -12,16 +13,13 @@ public class practica5 {
 		System.out.println("4.- Sair");
 		System.out.println("\n");
 	}
-	
-	static int dameOp() {
-		int op;
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Introduca una opcion: ");
-		op= scanner.nextInt();
-		
-		return op;
-		
-	}
+	   private static int dameOp() {
+		      menu();
+		      int numero = Leer.datoInt();
+		      System.out.println();
+		      return numero;
+		   }
+
 	
 	
 	public static void main(String[] args) {
@@ -35,26 +33,26 @@ public class practica5 {
 		
 		
 		do {
-			menu();
+			
 			op= dameOp();
 			
 			switch(op) {
 			
 			case 1:
 				matriz.recolle();
-				matriz.amosa(matriz.matrizA,matriz.matrizB);
+				matriz.amosa('A', 'B');
 				System.out.println("\n");
-				matriz.trasposta(matriz.matrizA, matriz.matrizC);
-				matriz.trasposta(matriz.matrizB, matriz.matrizD);
-				matriz.amosa(matriz.matrizC,matriz.matrizD);
+				matriz.trasposta('A', 'C');
+				matriz.trasposta('B', 'D');
+				matriz.amosa('C','D');
 				System.out.println("\n");
-				matriz.suma(matriz.matrizA, matriz.matrizB, matriz.matrizC);
-				matriz.resta(matriz.matrizA,matriz.matrizB,matriz.matrizD);
-				matriz.amosa(matriz.matrizC,matriz.matrizD);
+				matriz.suma('A', 'B','C');
+				matriz.resta('A','B','D');
+				matriz.amosa('C','D');
 				System.out.println("\n");
-				matriz.resta(matriz.matrizB, matriz.matrizA, matriz.matrizC);
-				matriz.multiplica(matriz.matrizA, matriz.matrizB, matriz.matrizD);
-				matriz.amosa(matriz.matrizC, matriz.matrizD);
+				matriz.resta('B','A','C');
+				matriz.multiplica('A','B','D');
+				matriz.amosa('C','D');
 				System.out.println("\n");
 				break;
 				
