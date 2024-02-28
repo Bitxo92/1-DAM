@@ -32,14 +32,14 @@ public class CMatrices {
 		for (i = 0; i < n; ++i) {
 			for (j = 0; j < n; ++j) {
 				System.out.print("A[" + i + "][" + j + "]:");
-				this.A[i][j] = Leer.datoInt();
+				A[i][j] = Leer.datoInt();
 			}
 		}
 
 		for (i = 0; i < n; ++i) {
 			for (j = 0; j < n; ++j) {
 				System.out.print("B[" + i + "][" + j + "]:");
-				this.B[i][j] = Leer.datoInt();
+				B[i][j] = Leer.datoInt();
 			}
 		}
 

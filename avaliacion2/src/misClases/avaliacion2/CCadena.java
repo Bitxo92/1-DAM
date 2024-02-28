@@ -7,7 +7,8 @@ import java.util.Scanner;
 @SuppressWarnings("all")
 public class CCadena {
 	private int i;
-	private char[] letras = new char[30];
+	private char[] cadena = new char[40];
+	
 	private String frase;
 
 	public void recolleCadena() {
@@ -15,7 +16,7 @@ public class CCadena {
 		System.out.println("introduzca una cadena de caracteres: ");
 		frase = teclado.nextLine();
 		for (i = 0; i < frase.length(); i++) {
-			letras[i] = frase.charAt(i);
+			cadena[i] = frase.charAt(i);
 
 		}
 		teclado.close();
@@ -23,17 +24,17 @@ public class CCadena {
 
 	public void amosaCadena() {
 		System.out.println("los valores recogidos en la cadena letras son:");
-		for (i = 0; i < letras.length; i++) {
-			if (letras[i] != '\0')
-				System.out.print(letras[i]);
+		for (i = 0; i < cadena.length; i++) {
+			if (cadena[i] != '\0')
+				System.out.print(cadena[i]);
 		}
 	}
 
 	public void amosaRevesCadena() {
 
-		for (i = (letras.length) - 1; i >= 0; i--) {
-			if (letras[i] != '\0')
-				System.out.print(letras[i]);
+		for (i = (cadena.length) - 1; i >= 0; i--) {
+			if (cadena[i] != '\0')
+				System.out.print(cadena[i]);
 		}
 
 	}
@@ -43,11 +44,11 @@ public class CCadena {
 
 		Random random = new Random();
 
-		for (int i = 0; i < letras.length; i++) {
+		for (int i = 0; i < cadena.length; i++) {
 
 			// Generar un carácter aleatorio entre 'a' y 'z'
 			char randomChar = (char) (random.nextInt(26) + 'a');
-			letras[i] = randomChar;
+			cadena[i] = randomChar;
 		}
 	}
 
@@ -55,14 +56,14 @@ public class CCadena {
 		int i, j;
 		char letra;
 		i = 0;
-		while (letras[i] != '\0')
+		while (cadena[i] != '\0')
 			i++;
 		i--;
 		j = 0;
 		while (j < i) {
-			letra = letras[j];
-			letras[j] = letras[i];
-			letras[i] = letra;
+			letra = cadena[j];
+			cadena[j] = cadena[i];
+			cadena[i] = letra;
 			j++;
 			i--;
 		}
@@ -71,26 +72,26 @@ public class CCadena {
 	public void capicua() {
 
 		// Crear un nuevo array con el doble de longitud
-		char[] resultado = new char[letras.length * 2];
+		char[] resultado = new char[cadena.length * 2];
 
 		// Copiar la cadena original en la primera mitad del nuevo array
-		System.arraycopy(letras, 0, resultado, 0, letras.length);
+		System.arraycopy(cadena, 0, resultado, 0, cadena.length);
 
 		// invertimos cadena con nuestro método
 		invierteCadena();
 
 		// Copiar la cadena invertida en la segunda mitad del nuevo array
-		System.arraycopy(letras, 0, resultado, letras.length, letras.length);
+		System.arraycopy(cadena, 0, resultado, cadena.length, cadena.length);
 
 		// Actualizar la cadena original con la versión sumada
-		this.letras = resultado;
+		this.cadena = resultado;
 
 	}
 
 	public void capicua2() {
 		int j = frase.length();
 		for (i = frase.length() - 1; i >= 0; i--) {
-			letras[j] = letras[i];
+			cadena[j] = cadena[i];
 			j++;
 
 		}
@@ -98,13 +99,13 @@ public class CCadena {
 	}
 
 	public void eliminaEnCadena(char a) {
-		for (i = 0; i < letras.length; i++) {
-			if (letras[i] == a) {
-				letras[i] = '\0';
+		for (i = 0; i < cadena.length; i++) {
+			if (cadena[i] == a) {
+				cadena[i] = '\0';
 				int s = i;
-				for (int j = s; j < letras.length - 1; j++) {
+				for (int j = s; j < cadena.length - 1; j++) {
 
-					letras[j] = letras[s + 1];
+					cadena[j] = cadena[s + 1];
 					s++;
 
 				}
@@ -116,12 +117,12 @@ public class CCadena {
 
 	public void repiteUnha() {
 		// Crear un nuevo array con el doble de longitud
-		char[] letrasRepetidas = new char[letras.length * 2];
+		char[] letrasRepetidas = new char[cadena.length * 2];
 
 		// Iterar sobre cada valor del array original
-		for (int i = 0; i < letras.length; i++) {
+		for (int i = 0; i < cadena.length; i++) {
 			// Obtener el valor actual
-			char valor = letras[i];
+			char valor = cadena[i];
 
 			// Repetir el valor dos veces y agregarlo al nuevo array
 			letrasRepetidas[2 * i] = valor;
@@ -129,15 +130,15 @@ public class CCadena {
 		}
 
 		// Actualizar el array original con la versión repetida
-		this.letras = letrasRepetidas;
+		this.cadena = letrasRepetidas;
 	}
 
 	public void repiteUna() {
 
 		for (int i = frase.length() - 1; i >= 0; i--) {
 			int j = i * 2 + 1;
-			letras[j] = letras[i];
-			letras[j - 1] = letras[i];
+			cadena[j] = cadena[i];
+			cadena[j - 1] = cadena[i];
 
 		}
 	}
@@ -145,9 +146,9 @@ public class CCadena {
 	public void eliminaPares() {
 		int j = 0;
 
-		for (i = 0; i < letras.length; i++) {
+		for (i = 0; i < cadena.length; i++) {
 			if (i % 2 == 0) {
-				letras[i] = '\0';
+				cadena[i] = '\0';
 
 			}
 
@@ -159,16 +160,75 @@ public class CCadena {
 		int i, j;
 		i = 0;
 		j = 0;
-		while (letras[i] != '\0') {
+		while (cadena[i] != '\0') {
 			if (i % 2 != 0) {
-				letras[j] = letras[i];
+				cadena[j] = cadena[i];
 				j++;
 			}
 			i++;
 		}
 		while (j < i) {
-			letras[j] = letras[i];
+			cadena[j] = cadena[i];
 			j++;
 		}
 	}
+	
+	  public void elimina125EnCadena() {
+	        //creamos un objeto stringbuffer para poder manipular la cadena
+	        StringBuffer stringBuffer = new StringBuffer();
+
+	        // Iteramos sobre la cadena original  controlando la longitud a traves del tamaño de string 
+	        //y añadimos solo los caracteres que no están en las posiciones 1, 2 y 5
+	        for (int i = 0; i < frase.length(); i++) {
+	            if (i != 1 && i != 2 && i != 5) {
+	                stringBuffer.append(cadena[i]);
+	            }
+	        }
+
+	        // Actualizamos la cadena original con la cadena modificada
+	        cadena = stringBuffer.toString().toCharArray();
+	    }
+	  
+	  public void duplica125EnCadena() {
+	        
+	        StringBuffer stringBuffer = new StringBuffer();
+
+	        
+	        for (int i = 0; i < frase.length(); i++) {
+	            if (i != 1 && i != 2 && i != 5) {
+	                stringBuffer.append(cadena[i]);
+	            }
+	            else
+	            	 stringBuffer.append(cadena[i]).append(cadena[i]);
+	        }
+
+	        // Actualizamos la cadena original con la cadena modificada
+	        cadena = stringBuffer.toString().toCharArray();
+	        
+	    }
+	
+	  
+	  public void duplicaNumerosEnCadena() {
+	        
+	        StringBuffer stringBuffer = new StringBuffer();
+
+	        
+	        for (int i = 0; i < frase.length(); i++) {
+	            if (cadena[i]<'0'|| cadena[i]>'9') {
+	                stringBuffer.append(cadena[i]);
+	            }
+	            else
+	            	 stringBuffer.append(cadena[i]).append(cadena[i]);
+	        }
+
+	        // Actualizamos la cadena original con la cadena modificada
+	        cadena = stringBuffer.toString().toCharArray();
+	        
+	    }
+	
+	
+	
+	
+	
+	
 }
