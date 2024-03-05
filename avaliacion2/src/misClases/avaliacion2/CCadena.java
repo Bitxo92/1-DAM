@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class CCadena {
 	private int i;
 	private char[] cadena = new char[40];
-	
+
 	private String frase;
 
 	public void recolleCadena() {
@@ -23,7 +23,7 @@ public class CCadena {
 	}
 
 	public void amosaCadena() {
-		System.out.println("los valores recogidos en la cadena letras son:");
+		System.out.println();
 		for (i = 0; i < cadena.length; i++) {
 			if (cadena[i] != '\0')
 				System.out.print(cadena[i]);
@@ -172,63 +172,74 @@ public class CCadena {
 			j++;
 		}
 	}
-	
-	  public void elimina125EnCadena() {
-	        //creamos un objeto stringbuffer para poder manipular la cadena
-	        StringBuffer stringBuffer = new StringBuffer();
 
-	        // Iteramos sobre la cadena original  controlando la longitud a traves del tamaño de string 
-	        //y añadimos solo los caracteres que no están en las posiciones 1, 2 y 5
-	        for (int i = 0; i < frase.length(); i++) {
-	            if (i != 1 && i != 2 && i != 5) {
-	                stringBuffer.append(cadena[i]);
-	            }
-	        }
+	public void elimina125EnCadena() {
+		// creamos un objeto stringbuffer para poder manipular la cadena
+		StringBuffer stringBuffer = new StringBuffer();
 
-	        // Actualizamos la cadena original con la cadena modificada
-	        cadena = stringBuffer.toString().toCharArray();
-	    }
-	  
-	  public void duplica125EnCadena() {
-	        
-	        StringBuffer stringBuffer = new StringBuffer();
+		// Iteramos sobre la cadena original controlando la longitud a traves del tamaño
+		// de string
+		// y añadimos solo los caracteres que no están en las posiciones 1, 2 y 5
+		for (int i = 0; i < frase.length(); i++) {
+			if (i != 1 && i != 2 && i != 5) {
+				stringBuffer.append(cadena[i]);
+			}
+		}
 
-	        
-	        for (int i = 0; i < frase.length(); i++) {
-	            if (i != 1 && i != 2 && i != 5) {
-	                stringBuffer.append(cadena[i]);
-	            }
-	            else
-	            	 stringBuffer.append(cadena[i]).append(cadena[i]);
-	        }
+		// Actualizamos la cadena original con la cadena modificada
+		cadena = stringBuffer.toString().toCharArray();
+	}
 
-	        // Actualizamos la cadena original con la cadena modificada
-	        cadena = stringBuffer.toString().toCharArray();
-	        
-	    }
-	
-	  
-	  public void duplicaNumerosEnCadena() {
-	        
-	        StringBuffer stringBuffer = new StringBuffer();
+	public void duplica125EnCadena() {
 
-	        
-	        for (int i = 0; i < frase.length(); i++) {
-	            if (cadena[i]<'0'|| cadena[i]>'9') {
-	                stringBuffer.append(cadena[i]);
-	            }
-	            else
-	            	 stringBuffer.append(cadena[i]).append(cadena[i]);
-	        }
+		StringBuffer stringBuffer = new StringBuffer();
 
-	        // Actualizamos la cadena original con la cadena modificada
-	        cadena = stringBuffer.toString().toCharArray();
-	        
-	    }
+		for (int i = 0; i < frase.length(); i++) {
+			if (i != 1 && i != 2 && i != 5) {
+				stringBuffer.append(cadena[i]);
+			} else
+				stringBuffer.append(cadena[i]).append(cadena[i]);
+		}
+
+		// Actualizamos la cadena original con la cadena modificada
+		cadena = stringBuffer.toString().toCharArray();
+
+	}
+
+	public void duplicaNumerosEnCadena() {
+
+		StringBuffer stringBuffer = new StringBuffer();
+
+		for (int i = 0; i < frase.length(); i++) {
+			if (cadena[i] < '0' || cadena[i] > '9') {
+				stringBuffer.append(cadena[i]);
+			} else
+				stringBuffer.append(cadena[i]).append(cadena[i]);
+		}
+
+		// Actualizamos la cadena original con la cadena modificada
+		cadena = stringBuffer.toString().toCharArray();
+
+	}
+
+	public void duplica125EnCadena2() {
+		int i = frase.length(), j = i+3;
+
+		while (i>=0) {
+			if (i != 1 && i != 2 && i != 5)
+				cadena[j] = cadena[i];
+			else {
+				cadena[j]=cadena[i];
+				cadena[j-1]=cadena[i];
+				j--;
+				
+			}
+			j--;
+			i--;
+
+		}
+		
 	
-	
-	
-	
-	
-	
+	}
+
 }
