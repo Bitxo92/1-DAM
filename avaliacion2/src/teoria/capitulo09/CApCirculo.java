@@ -1,7 +1,7 @@
 package teoria.capitulo09;
 
 import misClases.teoria.CCirculo;
-
+@SuppressWarnings("all")
 public class CApCirculo {
 	public static void main(String[] args) {
 		
