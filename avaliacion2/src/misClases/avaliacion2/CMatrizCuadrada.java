@@ -199,5 +199,15 @@ public class CMatrizCuadrada {
 		}
 		System.out.println();
 	}
+	
+	public void amosaEnColumna() {
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				matrizB[i][j]=matrizA[j==0?0:j==1?2:0][2-i];
+			}
+			
+
+		}
+	}
 
 }

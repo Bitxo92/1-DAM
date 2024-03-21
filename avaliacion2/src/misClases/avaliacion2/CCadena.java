@@ -7,7 +7,7 @@ import java.util.Scanner;
 @SuppressWarnings("all")
 public class CCadena {
 	private int i;
-	private char[] cadena = new char[40];
+	private char[] cadena = new char[80];
 
 	private String frase;
 
@@ -20,6 +20,20 @@ public class CCadena {
 
 		}
 		teclado.close();
+	}
+
+	public void recogerCadena() throws IOException {
+		int i = 0;
+		char letra;
+		System.out.println("introduzca cadena: ");
+		letra = (char) System.in.read();
+		while (letra != '\r') {
+			cadena[i] = letra;
+			letra = (char) System.in.read();
+			i++;
+
+		}
+
 	}
 
 	public void amosaCadena() {
@@ -156,6 +170,41 @@ public class CCadena {
 
 	}
 
+	public void duplicaCaracteres3Numeros2() {
+		int i = 0;
+		int contNum = 0;
+		int contChar = 0;
+
+		while (cadena[i] != '\0') {
+
+			if ((cadena[i] >= 'A' && cadena[i] <= 'z'))
+				contChar = contChar + 2;
+			else if (cadena[i] >= '0' && cadena[i] <= '9')
+				contNum++;
+			i++;
+
+		}
+		i--;
+		int j = i + contNum + contChar;
+
+		while (i >= 0) {
+			if ((cadena[i] >= 'A' && cadena[i] <= 'Z') || (cadena[i] >= 'a' && cadena[i] <= 'z')) {
+				cadena[j] = cadena[i];
+				cadena[j - 1] = cadena[i];
+				cadena[j - 2] = cadena[i];
+				j = j - 2;
+			} else if (cadena[i] >= '0' && cadena[i] <= '9') {
+				cadena[j] = cadena[i];
+				cadena[j - 1] = cadena[i];
+				j--;
+			} else
+				cadena[j] = cadena[i];
+			i--;
+			j--;
+		}
+
+	}
+
 	public void eliminaPares2() {
 		int i, j;
 		i = 0;
@@ -223,23 +272,50 @@ public class CCadena {
 	}
 
 	public void duplica125EnCadena2() {
-		int i = frase.length(), j = i+3;
+		int i = frase.length(), j = i + 3;
 
-		while (i>=0) {
+		while (i >= 0) {
 			if (i != 1 && i != 2 && i != 5)
 				cadena[j] = cadena[i];
 			else {
-				cadena[j]=cadena[i];
-				cadena[j-1]=cadena[i];
+				cadena[j] = cadena[i];
+				cadena[j - 1] = cadena[i];
 				j--;
-				
+
 			}
 			j--;
 			i--;
 
 		}
-		
-	
+
+	}
+
+	public void duplicaNumerosEnCadena2() {
+		int i = 0;
+		int cont = 0;
+		while (cadena[i] != '\0') {
+			if (cadena[i] >= '0' && cadena[i] <= '9')
+				cont++;
+			i++;
+
+		}
+		i--;
+		int j = i + cont;
+
+		while (i >= 0) {
+			if (cadena[i] < '0' || cadena[i] > '9')
+				cadena[j] = cadena[i];
+			else {
+				cadena[j] = cadena[i];
+				cadena[j - 1] = cadena[i];
+				j--;
+
+			}
+			j--;
+			i--;
+
+		}
+
 	}
 
 }
