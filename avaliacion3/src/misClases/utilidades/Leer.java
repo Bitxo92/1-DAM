@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 public class Leer {
     public static String dato() {
-        String sdato = "";
+        String sdato = " ";
         try {
             InputStreamReader isr = new InputStreamReader(System.in);
             BufferedReader flujoE = new BufferedReader(isr);
