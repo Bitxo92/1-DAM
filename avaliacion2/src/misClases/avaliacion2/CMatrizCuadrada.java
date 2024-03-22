@@ -182,5 +182,35 @@ public class CMatrizCuadrada {
 		}
 
 	}
+<<<<<<< HEAD
+=======
+	
+	
+	public void amosa(char letra) {
+		int i, j;
+		int[][] m = null;
+
+		if (letra == 'A')
+			m = matrizA;
+		else if (letra == 'B')
+			m = matrizB;
+		for (i = 0; i < 3; i++) {
+			for (j = 0; j < 3; j++)
+				System.out.print("  " + m[i][j] + "  ");
+			System.out.println();
+		}
+		System.out.println();
+	}
+	
+	public void amosaEnColumna() {
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				matrizB[i][j]=matrizA[j==0?0:j==1?2:0][2-i];
+			}
+			
+
+		}
+	}
+>>>>>>> origin/main
 
 }
