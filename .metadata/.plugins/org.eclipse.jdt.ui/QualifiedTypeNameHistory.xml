@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
+    <fullyQualifiedTypeName name="java.util.Calendar"/>
+    <fullyQualifiedTypeName name="misClases.teoria.CFecha"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="misClases.avaliacion2.CVector"/>
+    <fullyQualifiedTypeName name="misClases.teoria.CCirculo"/>
+    <fullyQualifiedTypeName name="misClases.teoria.Leer"/>
+    <fullyQualifiedTypeName name="misClases.teoria.CListaTfnos"/>
+    <fullyQualifiedTypeName name="misClases.teoria.CPersona"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,19 @@
+package misClases.teoria;
+
+public class CCirculo {
+	class Punto{
+		private double x,y;
+		Punto(double cx, double cy){
+			x=cx;
+			y=cy;
+		}
+		
+	}
+	private static double seno[]= new double[360];
+	private static double coseno[]= new double[360];
+	private static double pi=3.141592;
+	public static int numCirculos;
+	private Punto centro;
+	private double radio;
+
+}
