@@ -8,30 +8,30 @@ import misClases.utilidades.Leer;
 
 public class Fichero {
 	
-	File archivo;
-	String nombre;
-	String mensaje;
+	private File archivo;
+	private String nombre;
+	private String mensaje;
 	
 	public Fichero() {
 		
 	}
 	
-	 public static File asignaFichero(File fichero) {
+	 public void asignaFichero() {
 	        String nombreFichero;
 	        do {
 	            System.out.print("Nombre del fichero: ");
 	            nombreFichero = Leer.datoString();
-	            fichero = new File(nombreFichero);
-	        } while (!fichero.exists());
-	        return fichero;
+	            archivo = new File(nombreFichero);
+	        } while (!archivo.exists());
+	     
 	    }
 	 
 	 
-	 public static void amosa(File fichero) {
+	 public  void amosa() {
 	        FileReader fe = null;
 	        int caracter;
 	        try {
-	            fe = new FileReader(fichero);
+	            fe = new FileReader(archivo);
 	            while ((caracter = fe.read()) != -1) {
 	                System.out.print((char) caracter);
 	            }
