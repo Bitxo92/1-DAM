@@ -182,9 +182,7 @@ public class CMatrizCuadrada {
 		}
 
 	}
-<<<<<<< HEAD
-=======
-	
+
 	
 	public void amosa(char letra) {
 		int i, j;
@@ -211,6 +209,6 @@ public class CMatrizCuadrada {
 
 		}
 	}
->>>>>>> origin/main
+
 
 }
