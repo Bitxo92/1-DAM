@@ -24,15 +24,15 @@ public class CRecursivo {
 	public int total() {
 		int n = 0;
 		for (int i = 0; i < cadena.length; i++) {
-<<<<<<< HEAD
+
 			if (cadena[i] != '\0') {
-=======
+
 			if (cadena[i] == '\0') {
->>>>>>> origin/main
+
 				n++;
 
 			}
-		}
+		}}
 
 		return n;
 	}
@@ -156,11 +156,5 @@ public class CRecursivo {
 		} else
 			System.out.print(vector[0] + " ");
 	}
-<<<<<<< HEAD
-=======
-	
-	
-
->>>>>>> origin/main
 
 }

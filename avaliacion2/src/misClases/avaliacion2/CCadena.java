@@ -7,13 +7,13 @@ import java.util.Scanner;
 @SuppressWarnings("all")
 public class CCadena {
 	private int i;
-<<<<<<< HEAD
-	private char[] cadena = new char[40];
+
+	//private char[] cadena = new char[40];
 	
-=======
+
 	private char[] cadena = new char[80];
 
->>>>>>> origin/main
+
 	private String frase;
 
 	public void recolleCadena() {
@@ -27,10 +27,10 @@ public class CCadena {
 		teclado.close();
 	}
 
-<<<<<<< HEAD
+
 	public void amosaCadena() {
 		System.out.println("los valores recogidos en la cadena letras son:");
-=======
+	}
 	public void recogerCadena() throws IOException {
 		int i = 0;
 		char letra;
@@ -45,9 +45,7 @@ public class CCadena {
 
 	}
 
-	public void amosaCadena() {
-		System.out.println();
->>>>>>> origin/main
+	public void amosaCadena2() {
 		for (i = 0; i < cadena.length; i++) {
 			if (cadena[i] != '\0')
 				System.out.print(cadena[i]);
@@ -180,8 +178,7 @@ public class CCadena {
 
 	}
 
-<<<<<<< HEAD
-=======
+
 	public void duplicaCaracteres3Numeros2() {
 		int i = 0;
 		int contNum = 0;
@@ -217,7 +214,7 @@ public class CCadena {
 
 	}
 
->>>>>>> origin/main
+
 	public void eliminaPares2() {
 		int i, j;
 		i = 0;
@@ -234,7 +231,7 @@ public class CCadena {
 			j++;
 		}
 	}
-<<<<<<< HEAD
+
 	
 	  public void elimina125EnCadena() {
 	        //creamos un objeto stringbuffer para poder manipular la cadena
@@ -271,7 +268,7 @@ public class CCadena {
 	    }
 	
 	  
-	  public void duplicaNumerosEnCadena() {
+	  public void duplicaNumerosEnCadena3() {
 	        
 	        StringBuffer stringBuffer = new StringBuffer();
 
@@ -294,9 +291,9 @@ public class CCadena {
 	
 	
 	
-=======
 
-	public void elimina125EnCadena() {
+
+	public void elimina125EnCadena2() {
 		// creamos un objeto stringbuffer para poder manipular la cadena
 		StringBuffer stringBuffer = new StringBuffer();
 
@@ -313,7 +310,7 @@ public class CCadena {
 		cadena = stringBuffer.toString().toCharArray();
 	}
 
-	public void duplica125EnCadena() {
+	public void duplica125EnCadena4() {
 
 		StringBuffer stringBuffer = new StringBuffer();
 
@@ -392,5 +389,5 @@ public class CCadena {
 
 	}
 
->>>>>>> origin/main
+
 }
