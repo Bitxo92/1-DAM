@@ -11,8 +11,7 @@ public class herencia08 {
 		System.out.println(ref.metodo_y());
 		System.out.println("Método X de la ClaseD");
 		System.out.println(ref.metodo_x());
-		
-		 System.out.println("Método Z de la ClaseD");
-	
+		System.out.println("Método Z de la ClaseD");
+		System.out.println(((ClaseD)ref).metodo_z());
 	}
 }

@@ -13,7 +13,7 @@ public class ClaseD extends ClaseA {
 	}
 	
 	  public int metodo_z() {
-	        return -40;
+	        return atributo_x * -20;
 	    }
 	
 }
