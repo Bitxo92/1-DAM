@@ -3,7 +3,7 @@ package preparatorios;
 import misClases.avaliacion2.CCadena;
 
 
-import misClases.avaliacion2.CCadena;
+
 
 
 public class prepara07 {
