@@ -12,6 +12,7 @@ public static void main(String[] args) {
 	File Destino=fichero.asignaFicheroEscritura();
 	fichero.copia(Origen,Destino);
 	
+	
 }
 
 

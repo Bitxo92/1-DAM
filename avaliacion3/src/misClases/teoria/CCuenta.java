@@ -1,6 +1,6 @@
 package misClases.teoria;
 
-public abstract class CCuenta {
+public abstract class CCuenta implements IFecha {
 
 	private String nombre;
 	private String cuenta;
@@ -81,7 +81,7 @@ public abstract class CCuenta {
 		}
 		tipoDeInteres=tipo;
 	}
-	@Override
+	
 	protected void finalize()throws Throwable{
 		
 		System.out.println("-->Destructor CCuenta de "+ obtenerNombre());

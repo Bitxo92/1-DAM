@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.StringTokenizer;
 
 import misClases.utilidades.Leer;
 
@@ -25,6 +26,17 @@ public class Fichero {
 			nombre = Leer.datoString();
 			archivo = new File(nombre);
 		} while (!archivo.exists());
+
+	}
+
+	public File retornaFichero() {
+
+		do {
+			System.out.print("Nombre del fichero: ");
+			nombre = Leer.datoString();
+			archivo = new File(nombre);
+		} while (!archivo.exists());
+		return archivo;
 
 	}
 
@@ -133,27 +145,104 @@ public class Fichero {
 			}
 		}
 	}
-	
+
 	public void amosaInicio() {
 		asignaFichero();
-        BufferedReader lector = null;
-        try {
-            lector = new BufferedReader(new FileReader(archivo));
-            String linea;
-            while ((linea = lector.readLine()) != null) {
-                System.out.println(linea.length() + " ---> " + linea);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (lector != null) {
-                    lector.close();
-                }
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }
-    }
+		BufferedReader lector = null;
+		try {
+			lector = new BufferedReader(new FileReader(archivo));
+			String linea;
+			while ((linea = lector.readLine()) != null) {
+				System.out.println(linea.length() + " ---> " + linea);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (lector != null) {
+					lector.close();
+				}
+			} catch (IOException ex) {
+				ex.printStackTrace();
+			}
+		}
+	}
+
+	public void amosaLineaMaior(File nombreFichero) {
+		try {
+			FileReader fr = new FileReader(nombreFichero);
+			BufferedReader br = new BufferedReader(fr);
+			String primeraLinea = br.readLine();
+			String linea;
+			String lineaMaior = primeraLinea;
+			int longitudMaxima = primeraLinea.length();
+			while ((linea = br.readLine()) != null) {
+				if (linea.length() > longitudMaxima) {
+					longitudMaxima = linea.length();
+					lineaMaior = linea;
+				}
+			}
+			fr.close();
+			System.out.println("La línea más larga del fichero es:");
+			System.out.println(lineaMaior.length() + " ---> " + lineaMaior);
+		} catch (IOException e) {
+			System.out.println("Error al leer el archivo: " + e.getMessage());
+		}
+	}
+	
+	
+	
+	
+	 public void amosaLineaMaiorMenor(File nombreFichero) {
+	        try {
+	            FileReader fr = new FileReader(nombreFichero);
+	            BufferedReader br = new BufferedReader(fr);
+	            String primeraLinea = br.readLine();
+	            String linea;
+	            String lineaMaior = primeraLinea;
+	            String lineaMenor = primeraLinea;
+	            int longitudMaxima = primeraLinea.length();
+	            int longitudMinima = primeraLinea.length();
+	            while ((linea = br.readLine()) != null) {
+	                if (linea.length() > longitudMaxima) {
+	                    longitudMaxima = linea.length();
+	                    lineaMaior = linea;
+	                }
+	                if (linea.length() < longitudMinima) {
+	                    longitudMinima = linea.length();
+	                    lineaMenor = linea;
+	                }
+	            }
+	            fr.close();
+	            System.out.println("La línea más larga del fichero es:");
+	            System.out.println(lineaMaior.length() + " ---> " + lineaMaior);
+	            System.out.println("La línea más corta del fichero es:");
+	            System.out.println(lineaMenor.length() + " ---> " + lineaMenor);
+	        } catch (IOException e) {
+	            System.out.println("Error al leer el archivo: " + e.getMessage());
+	        }
+	    }
+	 
+	 
+	 public void amosaPalabras(File nombreFichero) {
+	        try {
+	            FileReader fr = new FileReader(nombreFichero);
+	            BufferedReader br = new BufferedReader(fr);
+	            String linea;
+	            while ((linea = br.readLine()) != null) {
+	                StringTokenizer tokenizer = new StringTokenizer(linea);
+	                while (tokenizer.hasMoreTokens()) {
+	                    System.out.println(tokenizer.nextToken());
+	                }
+	            }
+	            fr.close();
+	        } catch (IOException e) {
+	            System.out.println("Error al leer el archivo: " + e.getMessage());
+	        }
+	    }
+	 
+	 
+	 
+	 
 
 }
