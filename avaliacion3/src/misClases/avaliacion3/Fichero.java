@@ -208,7 +208,7 @@ public class Fichero {
 	                    longitudMaxima = linea.length();
 	                    lineaMaior = linea;
 	                }
-	                if (linea.length() < longitudMinima) {
+	                else if (linea.length() < longitudMinima) {
 	                    longitudMinima = linea.length();
 	                    lineaMenor = linea;
 	                }
