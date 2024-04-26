@@ -28,7 +28,7 @@ public class CCuentaAhorro extends CCuenta {
 		return cuotaMantenimiento;
 	}
 
-	public void comisiones() {
+	public void comisiones() throws EsSaldoInsuficiente{
 		if (dia() == 1)
 			reintegro(cuotaMantenimiento);
 	}

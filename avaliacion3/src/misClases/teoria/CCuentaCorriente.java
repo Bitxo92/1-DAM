@@ -55,12 +55,12 @@ public class CCuentaCorriente extends CCuenta {
 		transacciones++;
 	}
 
-	public void reintegro(double cantidad) {
+	public void reintegro(double cantidad) throws EsSaldoInsuficiente {
 		super.reintegro(cantidad);
 		transacciones++;
 	}
 
-	public void comisiones() {
+	public void comisiones() throws EsSaldoInsuficiente {
 
 		if (dia() == 1) {
 			int n = transacciones - transExentas;

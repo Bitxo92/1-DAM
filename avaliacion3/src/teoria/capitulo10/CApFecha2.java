@@ -7,6 +7,7 @@ import misClases.teoria.CCuenta;
 import misClases.teoria.CCuentaAhorro;
 import misClases.teoria.CCuentaCorriente;
 import misClases.teoria.CCuentaCorrienteConIn;
+import misClases.teoria.EsSaldoInsuficiente;
 import misClases.utilidades.Leer;
 
 public class CApFecha2 {
@@ -120,7 +121,12 @@ public class CApFecha2 {
 					if (opcion == 3)
 						banco.clienteEn(pos).ingreso(cantidad);
 					else
-						banco.clienteEn(pos).reintegro(cantidad);
+						try {
+							banco.clienteEn(pos).reintegro(cantidad);
+						} catch (EsSaldoInsuficiente e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 
 				}
 				break;
@@ -146,7 +152,12 @@ public class CApFecha2 {
 
 			case 7:// mantenimiento
 				for (pos = 0; pos < banco.longitud(); pos++) {
-					banco.clienteEn(pos).comisiones();
+					try {
+						banco.clienteEn(pos).comisiones();
+					} catch (EsSaldoInsuficiente e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					banco.clienteEn(pos).intereses();
 				}
 				break;

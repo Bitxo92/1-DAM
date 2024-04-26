@@ -49,22 +49,22 @@ public abstract class CCuenta implements IFecha {
 		return saldo;
 	}
 
-	public abstract void comisiones();
+	public abstract void comisiones() throws EsSaldoInsuficiente;
 
 	public abstract double intereses();
 
 	public void ingreso(double cantidad) {
 		if (cantidad < 0) {
+			
 			System.out.println("Error:cantidad negativa");
 			return;
 		}
 		saldo += cantidad;
 	}
 
-	public void reintegro(double cantidad) {
+	public void reintegro(double cantidad)throws EsSaldoInsuficiente {
 		if(saldo-cantidad<0) {
-			System.out.println("Error: no dispone de saldo");
-			return;
+			throw new EsSaldoInsuficiente(this,cantidad);
 		}
 		saldo-=cantidad;
 
