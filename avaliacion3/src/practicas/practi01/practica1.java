@@ -25,12 +25,12 @@ public class practica1 {
             break;
          case 5:
             System.out.print("Dame identificador de proceso: ");
-            identificador = practicas.ejem01.Leer.datoString();
+            identificador = Leer.datoString();
             juzgado.modificarProceso(identificador);
             break;
          case 6:
             System.out.print("Dame identificador de proceso: ");
-            identificador = practicas.ejem01.Leer.datoString();
+            identificador = Leer.datoString();
             juzgado.eliminarProceso(identificador);
             break;
          case 7:
