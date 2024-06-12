@@ -89,11 +89,6 @@ public class CHospital {
 	public int dameOpcion() {
 		this.menu();
 		int opcion = Leer.datoInt();
-		while (opcion < '0' && opcion > '9') {
-			System.out.print("Dato int INVALIDO. Teclee otro: ");
-			opcion = Leer.datoInt();
-		}
-
 		System.out.println();
 		return opcion;
 	}
